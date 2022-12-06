@@ -1,0 +1,146 @@
+program lab7_bubble;
+
+{$APPTYPE CONSOLE}
+
+const
+  Nmax = 20;
+
+var
+  n, i, j, k, q, buff: integer;
+  check_sor, check_eq, cs: integer;
+  a: array [1 .. Nmax] of integer;
+  fin, fout: TextFile;
+
+begin
+  // files config
+  AssignFile(fin, ParamStr(1));
+  Reset(fin);
+
+  AssignFile(fout, ParamStr(2));
+  Rewrite(fout);
+
+  // read data
+  readln(fin, n);
+  for i := 1 to n do readln(fin, a[i]);
+
+  // mistake
+  if n < 2 then
+    begin
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'ÎØÈÁÊÀ' : 80);
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'Ââåäåíî ÍÅÊÎÐÐÅÊÒÍÎÅ çíà÷åíèå n!');
+      writeln(fout, 'Äëÿ êîððåêòíîé ðàáîòû ïðîãðàììû ïîæàëóéñòà');
+      writeln(fout, 'ââåäèòå çíà÷åíèå n > 2.');
+
+      // close files
+      CloseFile(fin);
+      CloseFile(fout);
+    end;
+
+  // write header
+  writeln(fout, 'ËÐ-4 ÂÀÐ-22 (ÑÎÐÒÈÐÎÂÊÀ ÏÓÇÛÐÜÊÎÌ)');
+
+  for i := 1 to 160 do write(fout, '*');
+  writeln(fout);
+  writeln(fout, 'ÂÕÎÄÍÛÅ ÄÀÍÍÛÅ' : 80);
+  for i := 1 to 160 do write(fout, '*');
+  writeln(fout);
+
+  writeln(fout, 'Äëèííà ìàññèâà A: ', n);
+  writeln(fout, 'Ìàññèâ A: ');
+  for i := 1 to n do writeln(fout, '   ', i, ') ', a[i] : 3);
+
+  // define case situtions
+  for q := 2 to n do
+    begin
+      if a[q -1] > a[q] then
+        begin
+          check_sor := check_sor + 1;
+        end;
+
+      if a[q -1] = a[q] then
+        begin
+          check_eq := check_eq + 1;
+        end;
+    end;
+
+  if check_sor <> n - 1 then cs := 1;
+  if check_sor = n - 1 then cs := 2;
+  if check_eq = n - 1 then cs := 3;
+
+
+  case cs of
+
+    1: begin
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, '' : 80);
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+
+      // sort
+      for i := n - 1 downto 1 do
+        begin
+            for j := 1 to i do
+              begin
+                if A[i] < A[i+1] then
+                  begin
+                  buff:= A[i];
+                  A[i]:= A[i + 1];
+                  A[i + 1]:= buff;
+                  end;
+              end;
+        for k := 1 to n do write(A[i], ' '); writeln;
+        end;;
+
+      // write data
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'ÂÛÕÎÄÍÛÅ ÄÀÍÍÛÅ' : 80);
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'Îòñîðòèðîâàííûé ìàññèâ À: ');
+      for i := 1 to n do writeln(fout, '   ', i, ') ', a[i] : 3);
+
+      // close files
+      CloseFile(fin);
+      CloseFile(fout)
+    end;
+
+    2: begin
+      // write data
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'ÂÛÕÎÄÍÛÅ ÄÀÍÍÛÅ' : 80);
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'Ìàññèâ A: ');
+      writeln(fout, '   Èñõîäíûé ìàññèâ ÓÆÅ ÎÒÑÎÐÒÈÐÎÂÀÍ');
+      for i := 1 to n do writeln(fout, '   ', i, ') ', a[i] : 3);
+
+      // close files
+      CloseFile(fin);
+      CloseFile(fout)
+    end;
+
+    3: begin
+      // write data
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'ÂÛÕÎÄÍÛÅ ÄÀÍÍÛÅ' : 80);
+      for i := 1 to 160 do write(fout, '*');
+      writeln(fout);
+      writeln(fout, 'Ìàññèâ A: ');
+      writeln(fout, '   Èñõîäíûé ìàññèâ ñîñòîèò èç ÐÀÂÍÛÕ ÝËÅÌÅÍÒÎÂ');
+      for i := 1 to n do writeln(fout, '   ', i, ') ', a[i] : 3);
+
+      // close files
+      CloseFile(fin);
+      CloseFile(fout)
+    end;
+  end;
+end.
+

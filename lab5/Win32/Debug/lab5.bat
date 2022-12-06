@@ -1,0 +1,9 @@
+lab5.exe tst1_in.txt tst1_out.txt
+lab5.exe tst2_in.txt tst2_out.txt
+lab5.exe tst3_in.txt tst3_out.txt
+lab5.exe tst4_in.txt tst4_out.txt
+lab5.exe tst5_in.txt tst5_out.txt
+lab5.exe tst6_in.txt tst6_out.txt
+lab5.exe tst7_in.txt tst7_out.txt
+lab5.exe tst8_in.txt tst8_out.txt
+lab5.exe tst9_in.txt tst9_out.txt

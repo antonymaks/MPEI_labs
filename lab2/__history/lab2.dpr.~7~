@@ -1,0 +1,83 @@
+program lab2;
+
+{$APPTYPE CONSOLE}
+
+uses
+  Windows;
+
+const
+  Nmax = 20;
+  pi = 3.14159265;
+
+var
+  n, i, r, num: integer;
+  p, sr, sx, cx: real;
+  x: array [1 .. Nmax] of integer;
+  y: array [1 .. Nmax] of integer;
+
+begin
+  //console lang
+  setConsoleCP(1251);
+  setConsoleOutputCP(1251);
+
+  //data input
+  writeln('ЛР-2 ВАР-22' : 65);
+  writeln('Длинна массива X:');readln(n);
+  { TODO : ввод критического удаления R }
+  writeln('Размеры углов в ГРАДУСАХ (массив Х):');
+  for i := 1 to n do readln(x[i]);
+
+  //next part line
+  for i := 1 to 120 do write('=');
+  writeln;
+
+  //calculating
+  {for i := 1 to n do
+    begin
+      if x[i] > 0 then
+        begin
+          sx := (sin((x[i] * pi) / 180));
+          y[i] := 1 - sx;
+        end;
+
+      if x[i] <= 0 then
+        begin
+          cx := -(cos((abs(x[i]) * pi) / 180));
+          y[i] := 1 - cx
+        end;
+
+      if x[i] >= 0 then
+        num := num + 1;
+    end;}
+    for i := 1 to n do
+      begin
+         y[i] := x[i] + 1;
+         num := num + 1
+      end;
+
+
+
+
+  //data output
+  writeln('ИСХОДНЫЕ ДАННЫЕ');
+
+  writeln('  Длина массива X:', n : 3);
+
+  writeln('  Элементы массива X:');
+  for i := 1 to n do writeln('   x_', i, x[i] : 4);
+
+  //next part line
+  for i := 1 to 120 do write('*');
+  writeln;
+
+  writeln('ВЫХОДНЫЕ ДАННЫЕ');
+
+  writeln('  Элементы массива Y: ');
+  for i := 1 to n do
+    begin
+      write('   y_', i,'  '); writeln(y[i] : 4);
+    end;
+  writeln('Кол-во неотрицательных Х:', num : 5);
+
+  write('Нажмите ENTER...');readln
+end.

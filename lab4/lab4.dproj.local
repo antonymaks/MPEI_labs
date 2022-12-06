@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.242,G:\учёба\ВУЗ\1 сем\прога\лабы\Project1.dproj=G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\lab4.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.512,G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\New1.inpt.txt=G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\inpt.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.979,=G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\New1.inpt.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.224,=G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\New1.outpt.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.300,G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\New1.outpt.txt=G:\учёба\ВУЗ\1 сем\прога\лабы\ЛР-4\outpt.txt</Transaction>
+  </Transactions>
+</BorlandProject>
